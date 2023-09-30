@@ -1,0 +1,46 @@
+Q1. The benefits of regular expressions (regex) include:
+
+   - Pattern Matching: Regex allows you to search, match, and manipulate strings based on specific patterns, making it useful for tasks like data validation, text extraction, and searching.
+   - Flexibility: Regular expressions provide a powerful and flexible way to describe complex patterns in text, including wildcards, character classes, repetitions, and alternatives.
+   - Efficiency: When used correctly, regex can efficiently process and manipulate large amounts of text, as it relies on compiled patterns and optimized algorithms.
+   - Portability: Regex is supported in various programming languages and text editors, making it a widely applicable tool.
+   - Expressiveness: You can create concise and expressive patterns to describe various text patterns, making your code more readable.
+
+Q2. The regular expressions "(ab)c+" and "a(bc)+" have different effects:
+
+   - "(ab)c+": This pattern matches one or more occurrences of the sequence "abc" where "ab" appears once, and "c" appears one or more times after it.
+   - "a(bc)+": This pattern matches one or more occurrences of the sequence "abc" where "bc" appears once, and "a" appears one or more times before it.
+
+The unqualified pattern "abc+" would match one or more occurrences of the sequence "abc" with no specific grouping.
+
+Q3. You need to use the "import re" statement in Python when working with regular expressions. It imports the "re" module, which provides functions and classes for working with regular expressions in Python.
+
+Q4. In square brackets when expressing a range in a regular expression pattern, the characters that have special significance are:
+
+   - Hyphen (-): It is used to define a range of characters. For example, "[a-z]" represents all lowercase letters from 'a' to 'z'.
+   - Caret (^): When placed as the first character inside square brackets, it negates the character set. For example, "[^0-9]" matches any character that is not a digit.
+
+The characters inside square brackets are treated as literals and do not have special meaning except for the hyphen and caret when used in specific positions.
+
+Q5. Compiling a regular-expression object benefits you by improving performance. When you compile a regex pattern using the `re.compile()` function, the pattern is pre-processed and optimized. This results in faster matching operations when you apply the pattern to multiple strings because the compiled pattern can be reused without the need for re-parsing and re-optimization.
+
+Q6. The match object returned by `re.match` and `re.search` provides various methods and attributes for working with matched text. Some examples of how to use it include:
+
+   - `group()`: Retrieves the matched text.
+   - `start()`: Returns the start index of the match.
+   - `end()`: Returns the end index of the match.
+   - `span()`: Returns a tuple of (start, end) indices.
+   - `groups()`: Returns a tuple of captured groups.
+
+You can use these methods to extract information from matched text.
+
+Q7. The difference between using a vertical bar (|) as an alteration and using square brackets as a character set in regular expressions is as follows:
+
+   - Vertical Bar (|): It is used to specify alternatives. For example, "cat|dog" matches either "cat" or "dog".
+   - Square Brackets ([]): They are used to define a character set or a range of characters. For example, "[aeiou]" matches any vowel character.
+
+Vertical bar allows you to choose one alternative from multiple, while square brackets match any single character from the set defined inside them.
+
+Q8. In regular-expression search patterns, using the raw-string indicator (r) is necessary to avoid unwanted escaping of special characters. For example, if you want to match a literal backslash ("\d") in a string, you should use the raw string "r'\\d'" instead of the non-raw string "'\\d'". 
+
+In replacement strings, using the raw-string indicator is not usually necessary, but it can be used for consistency and to avoid potential issues with unintended escape sequences. For example, using r'\1' in a replacement string ensures that "\1" is treated as a literal character and not interpreted as an escape sequence.
